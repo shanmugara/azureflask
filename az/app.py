@@ -2,7 +2,7 @@ import logging, requests
 from flask import Flask, current_app, render_template, redirect, url_for, request
 from flask_session import Session
 from pathlib import Path
-import app_config
+from az import app_config
 from ms_identity_web import IdentityWebPython
 from ms_identity_web.adapters import FlaskContextAdapter
 from ms_identity_web.errors import NotAuthenticatedError
@@ -67,9 +67,9 @@ def create_app(secure_client_credential=None):
     @ms_identity_web.login_required
     def call_ms_graph():
         ms_identity_web.acquire_token_silently()
-        graph = app.config['GRAPH_ENDPOINT']
+        url_endpoint = app.config['GRAPH_ENDPOINT'] + '/users'
         token = f'Bearer {ms_identity_web.id_data._access_token}'
-        results = requests.get(graph, headers={'Authorization': token}).json()
+        results = requests.get(url_endpoint, headers={'Authorization': token}).json()
         return render_template('auth/call-graph.html', results=results)
 
     return app
