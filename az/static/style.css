@@ -15,18 +15,17 @@
     left: 0;
 }
 
-
 .card {
     width: 50vw;
     margin:auto;
-    background:#f0f0f0; 
+    background: #eaeaec;
     border:1px solid black;
 }
 
 .card-header {
     /* background: darkseagreen; */
     color: rgba(255,255,255,0.85);
-    background: #0078d4;
+    background: #ff0000;
     font-weight: 300;
 }
 
@@ -34,6 +33,13 @@
     align-content: center
 }
 
+.bg-steel {
+  background: #0f4c0a;
+}
+
+.bg-darkblue {
+  background: #052657;
+}
 #wrapper {
     display: flex;
   }
