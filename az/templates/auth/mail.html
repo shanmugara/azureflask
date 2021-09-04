@@ -1,0 +1,25 @@
+{% extends 'mail_page_content.html' %}
+
+{% block header %}
+    {{ "Your mails" }}
+{% endblock %}
+
+{% block text %}
+    <table class="table">
+        <tr class="table_header">
+            <th class="table__cell">Date</th>
+            <th class="table__cell">From</th>
+            <th class="table__cell">Preview</th>
+        </tr>
+        {% for mail in mails %}
+            <tr class="table__row">
+                <td class="table__cell">{{ mail.receivedDateTime }}</td>
+                <td class="table__cell">{{ mail.sender.emailAddress.address }}</td>
+                <td class="table__cell">{{ mail.bodyPreview }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    {{ "mails are here" }}
+{% endblock %}

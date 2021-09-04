@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block banner_text %}
+    {% block title %}
+        {{ config['SAMPLE_DESCRIPTION'] }}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+<div class="mail-card">
+    <h5 class="card-header bg-darkblue">
+        {% block header%} {% endblock %}
+    </h5>
+    <div class="card-body">
+        <p class="card-text">
+            {% block text %} {% endblock %}
+        </p>
+    </div>
+</div>
+{% endblock %}

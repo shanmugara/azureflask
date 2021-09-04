@@ -72,6 +72,17 @@ def create_app(secure_client_credential=None):
         results = requests.get(url_endpoint, headers={'Authorization': token}).json()
         return render_template('auth/call-graph.html', results=results)
 
+    @app.route("/mail")
+    @ms_identity_web.login_required
+    def get_mail():
+        ms_identity_web.acquire_token_silently()
+        token = f'Bearer {ms_identity_web.id_data._access_token}'
+        url_endpoint = app.config['GRAPH_ENDPOINT'] + '/me/messages'
+        results = requests.get(url=url_endpoint, headers={'Authorization': token})
+        mymails = results.json()
+        logging.info(f'Mymails: {mymails}')
+        return render_template('auth/mail.html', mails=mymails['value'])
+
     return app
 
 

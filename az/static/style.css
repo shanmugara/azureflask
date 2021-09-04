@@ -22,6 +22,13 @@
     border:1px solid black;
 }
 
+.mail-card {
+    width: fit-content;
+    margin: auto;
+    background: #eaeaec;
+    border:1px solid black;
+}
+
 .card-header {
     /* background: darkseagreen; */
     color: rgba(255,255,255,0.85);
@@ -66,4 +73,25 @@ flex: 1;
     width: 1.25em;
     margin: auto;
     fill: green
+}
+
+.table {
+    border-spacing: 1px;
+    border-color: #052657;
+    margin: 1px;
+    background-color: azure;
+}
+
+.table__row:nth-child(even){
+    background-color: #e5e5e5;
+}
+
+.table__cell{
+    padding: 8px;
+    border-color: #052657;
+    border-width: thin;
+}
+
+.table_header{
+    text-align: left;
 }
