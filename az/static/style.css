@@ -23,9 +23,9 @@
 }
 
 .mail-card {
-    width: fit-content;
+    width: auto;
     margin: auto;
-    background: #eaeaec;
+    background: bisque;
     border:1px solid black;
 }
 
@@ -79,7 +79,7 @@ flex: 1;
     border-spacing: 1px;
     border-color: #052657;
     margin: 1px;
-    background-color: azure;
+    background-color: beige;
 }
 
 .table__row:nth-child(even){
