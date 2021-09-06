@@ -1,15 +1,20 @@
-
 {% extends 'layout.html' %}
 
 {% block banner_text %}
-    {% block title %}
-        {{ config['SAMPLE_DESCRIPTION'] }}
-    {% endblock %}
+{% include "auth/banner-text.html" %}
 {% endblock %}
 
-
-
 {% block body %}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{ url_for('get_mail')}}">Inbox</a>
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Sent Items</a>
+    </li>
+</ul>
+
 <div class="mail-card">
     <h5 class="card-header bg-darkblue">
         {% block header%} {% endblock %}

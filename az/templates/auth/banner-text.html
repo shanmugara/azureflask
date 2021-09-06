@@ -1,0 +1,7 @@
+{% block title %}
+    {% if g.identity_context_data.authenticated %}
+        {{ "You are logged in! " }}
+    {% else %}
+        {{ config['SAMPLE_DESCRIPTION'] }}
+    {% endif %}
+{% endblock %}
