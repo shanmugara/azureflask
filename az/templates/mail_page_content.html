@@ -5,25 +5,45 @@
 {% endblock %}
 
 {% block body %}
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" id="mytabs" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{{ url_for('get_mail')}}">Inbox</a>
-
+        <a class="nav-link active" role="presentation" data-bs-toggle="tab" data-bs-target="#inbox">Inbox</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Sent Items</a>
+        <a class="nav-link" role="presentation" data-bs-toggle="tab" data-bs-target="#sent">Sent Items</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" role="presentation" data-bs-toggle="tab" data-bs-target="#cal">Calendar</a>
     </li>
 </ul>
 
-<div class="mail-card">
-    <h5 class="card-header bg-darkblue">
-        {% block header%} {% endblock %}
-    </h5>
-    <div class="card-body">
-        <p class="card-text">
-            {% block text %} {% endblock %}
-        </p>
+<div class="tab-content" id="mytabcontent">
+    <div role="tabpanel" class="tab-pane fade show active" id="inbox" aria-labelledby="inbox-tab">
+        <div class="mail-card">
+            <h5 class="card-header bg-darkblue">
+                {% block inboxheader%} {% endblock %}
+            </h5>
+            <div class="card-body">
+                <p class="card-text">
+                    {% block inbox %} {% endblock %}
+                </p>
+            </div>
+        </div>
     </div>
+    <div role="tabpanel" class="tab-pane fade" id="sent" aria-labelledby="sent-tab">
+        <div class="mail-card">
+            <h5 class="card-header bg-darkblue">
+                {% block sentheader%} {% endblock %}
+            </h5>
+            <div class="card-body">
+                <p class="card-text">
+                    {% block sent %} {% endblock %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="cal" aria-labelledby="cal-tab">
 </div>
+
 {% endblock %}
 

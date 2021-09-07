@@ -47,6 +47,11 @@
 .bg-darkblue {
   background: #052657;
 }
+
+.bgcol-darkblue {
+  background-color: #052657;
+}
+
 #wrapper {
     display: flex;
   }
