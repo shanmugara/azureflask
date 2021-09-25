@@ -9,6 +9,7 @@ from ms_identity_web.errors import NotAuthenticatedError
 from ms_identity_web.configuration import AADConfig
 
 """
+
 Instructions for running the sample app. These are dev environment instructions ONLY.
 Do not run using this configuration in production.
 LINUX/OSX - in a terminal window, type the following:
